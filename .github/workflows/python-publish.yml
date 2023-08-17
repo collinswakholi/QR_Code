@@ -12,10 +12,6 @@ on:
   release:
     types: [published]
 
-permissions:
-  contents: read
-  id-token: write
-
 jobs:
   build-n-publish:
     name: Build and publish Python distribution to PyPI
