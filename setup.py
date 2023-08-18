@@ -10,7 +10,7 @@ desc_ = "Read QR code from image using WeChat QR code reader in OpenCV"
 
 setup(
     name=name_,
-    version="0.1.4",
+    version="0.1.4.1",
     description=desc_,
     long_description=long_descr,
     long_description_content_type="text/markdown",
