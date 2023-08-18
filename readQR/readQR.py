@@ -18,7 +18,6 @@ class readQR_code:
         sr_proto_file = os.path.join(base_dir, "sr.prototxt")
         sr_model_file = os.path.join(base_dir, "sr.caffemodel")
         
-        self.qrDecoder = qrDetector
         self.qrDetector = cv2.wechat_qrcode_WeChatQRCode(proto_file, model_file, sr_proto_file, sr_model_file)
         
     def decode(self, img, show=None): # show = None, "single", "continuous"
