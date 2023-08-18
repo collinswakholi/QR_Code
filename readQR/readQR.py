@@ -94,9 +94,9 @@ class readQR_code:
 # Example usage
 
 # import cv2
-# from readQR import readQR_
+# from readQR import readQR_code
 # if __name__ == "__main__":
 #     im = cv2.imread("images/single_qr.jpeg")
-#     qr = readQR()
+#     qr = readQR_code()
 #     data = qr.decode(im, show="single")
 #     [print(data[i]) for i in range(len(data))]
