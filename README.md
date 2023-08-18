@@ -12,11 +12,11 @@ pip install readQR
 
 ## Usage
 ```python
-from readQR import readQR_code
+from readQR import ReadQR
 import cv2
 
 img = cv2.imread('test.png')
-reader = readQR_code()
+reader = ReadQR()
 show = None # Set to "single" or "continuous" to show the image with the QR code highlighted for single or continuous frames (video)
 result = reader.decode(img, show=show)
 [print(r) for r in result]
