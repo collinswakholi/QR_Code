@@ -11,6 +11,6 @@ except DistributionNotFound:
 __version__ = version_
 __all__ = ["readQR_code"]
 
-if "pdoc" not in sys.modules:
-    with open("README.md", "r", encoding="utf-8") as fh:
+if "pdoc" in sys.modules:
+    with open("README.md", "r") as fh:
         _readme = fh.read()
