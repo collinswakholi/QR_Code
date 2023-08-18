@@ -4,21 +4,20 @@ import os
 import matplotlib.pyplot as plt
 
 # QR code decoder (weChat), get artefacts from https://github.com/WeChatCV/opencv_3rdparty/tree/wechat_qrcode
-from . import artefacts
 
 class ReadQR:
     """
     Reads QR codes from image returns list of strings of data encoded
     """
     
-    def __init__(self):
-        # self.qrDecoder = qrDetector
-        self.qrDetector = cv2.wechat_qrcode_WeChatQRCode(
-            artefacts.model_detect_prototxt, 
-            artefacts.model_detect_caffemodel,
-            artefacts.model_sr_prototxt,
-            artefacts.model_sr_caffemodel
-            )
+    def __init__(self, artefact_path='wechat_artefacts'):
+        
+        detect_prototxt = os.path.join(artefact_path, "detect.prototxt")
+        detect_caffemodel = os.path.join(artefact_path, "detect.caffemodel")
+        sr_prototxt = os.path.join(artefact_path, "sr.prototxt")
+        sr_caffemodel = os.path.join(artefact_path, "sr.caffemodel")
+        
+        self.qrDetector = cv2.wechat_qrcode_WeChatQRCode(detect_prototxt, detect_caffemodel, sr_prototxt, sr_caffemodel)
         
     def decode(self, img, show=None): # show = None, "single", "continuous"
         """
