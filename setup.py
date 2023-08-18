@@ -10,7 +10,7 @@ desc_ = "Read QR code from image using WeChat QR code reader in OpenCV"
 
 setup(
     name=name_,
-    version="0.1.4.1",
+    version="0.1.4.2",
     description=desc_,
     long_description=long_descr,
     long_description_content_type="text/markdown",
@@ -24,5 +24,7 @@ setup(
     ],
     python_requires='>=3.6',
     include_package_data=True,
-    package_data={'':['wechat_artefacts/*.prototxt', 'wechat_artefacts/*.caffemodel']},
+    package_data={
+        name_: ['wechat_artefacts/*'],
+    },
 )
