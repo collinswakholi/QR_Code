@@ -9,7 +9,7 @@ except DistributionNotFound:
     version_ = "unknown"
     
 __version__ = version_
-__all__ = ["readQR_code"]
+__all__ = []
 
 if "pdoc" in sys.modules:
     with open("README.md", "r") as fh:
@@ -26,3 +26,5 @@ for file_name in artefacts:
         model_var_name = "model_"+file_name.replace(".","_")
         globals()[model_var_name] = file_path
         __all__.append(model_var_name)
+
+__all__.extend(['readQR_code'])
