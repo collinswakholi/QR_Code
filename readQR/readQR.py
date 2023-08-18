@@ -12,7 +12,7 @@ class readQR_code:
     
     def __init__(self):
         
-        base_dir = "readQR/wechat_artefacts"
+        base_dir = "wechat_artefacts"
         proto_file = os.path.join(base_dir, "detect.prototxt")
         model_file = os.path.join(base_dir, "detect.caffemodel")
         sr_proto_file = os.path.join(base_dir, "sr.prototxt")
