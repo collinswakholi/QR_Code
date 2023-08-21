@@ -13,10 +13,12 @@ pip install readQR
 ## Usage
 ```python
 from readQR import ReadQR
+import readQR.wechat_artefacts as artefacts
 import cv2
 
+art_dir = artefacts.__path__[0]
 img = cv2.imread('test.png')
-reader = ReadQR()
+reader = ReadQR(artefact_path=art_dir)
 show = None # Set to "single" or "continuous" to show the image with the QR code highlighted for single or continuous frames (video)
 result = reader.decode(img, show=show)
 [print(r) for r in result]
