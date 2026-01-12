@@ -2,12 +2,43 @@
 
 ## Description
 This is a simple python script that reads a QR code from an image and prints the result.
-It uses the WeChat QR code reader API in openCV to read the QR code from a CV2 image.
+It uses the WeChat QR code reader API in OpenCV to read the QR code from a CV2 image.
+
+## Requirements
+**Important:** This package requires `opencv-contrib-python`, NOT the standard `opencv-python` package.
 
 ## Installation
-1. Install using pip:
+
+### Option 1: Install from pip (recommended)
 ```shell
 pip install readQR
+```
+
+### Option 2: Install from source
+```shell
+# Clone the repository
+git clone https://github.com/CollinsWakholi/QR_Code.git
+cd QR_Code
+
+# Uninstall any existing opencv packages to avoid conflicts
+pip uninstall opencv-python opencv-contrib-python -y
+
+# Install dependencies (opencv-contrib-python includes all standard OpenCV features)
+pip install -r requirements.txt
+```
+
+**Note:** If you have `opencv-python` installed, you MUST uninstall it first:
+```shell
+pip uninstall opencv-python opencv-contrib-python -y
+pip install opencv-contrib-python>=4.5.0
+```
+
+The WeChat QR code detector is only available in `opencv-contrib-python`, not in the standard `opencv-python` package. Having both installed can cause conflicts.
+
+### Verify Installation
+After installation, verify everything is set up correctly:
+```shell
+python check_installation.py
 ```
 
 ## Usage

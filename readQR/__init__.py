@@ -1,14 +1,18 @@
 import sys
 from readQR.readQR import ReadQR
 
-
-from pkg_resources import get_distribution, DistributionNotFound
+# Use importlib.metadata instead of deprecated pkg_resources
 try:
-    version_ = get_distribution(__name__).version
-except DistributionNotFound:
-    version_ = "unknown"
-    
-__version__ = version_
+    from importlib.metadata import version, PackageNotFoundError
+except ImportError:
+    # Python < 3.8 fallback
+    from importlib_metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version(__name__)
+except PackageNotFoundError:
+    __version__ = "unknown"
+
 __all__ = ["ReadQR"]
 
 if "pdoc" in sys.modules:

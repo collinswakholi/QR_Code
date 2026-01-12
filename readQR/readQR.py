@@ -8,9 +8,21 @@ import matplotlib.pyplot as plt
 class ReadQR:
     """
     Reads QR codes from image returns list of strings of data encoded
+    
+    Note: Requires opencv-contrib-python (not opencv-python)
     """
     
     def __init__(self, artefact_path='wechat_artefacts'):
+        
+        # Check if WeChat QR detector is available
+        if not hasattr(cv2, 'wechat_qrcode_WeChatQRCode'):
+            raise ImportError(
+                "WeChat QR code detector not found in OpenCV.\n"
+                "Please install opencv-contrib-python:\n"
+                "  pip uninstall opencv-python opencv-contrib-python\n"
+                "  pip install opencv-contrib-python>=4.5.0\n"
+                "\nNote: You must uninstall opencv-python first to avoid conflicts."
+            )
         
         detect_prototxt = os.path.join(artefact_path, "detect.prototxt")
         detect_caffemodel = os.path.join(artefact_path, "detect.caffemodel")
